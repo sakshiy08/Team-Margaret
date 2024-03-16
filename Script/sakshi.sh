@@ -1,18 +1,18 @@
-1. mkdir HackBio
+mkdir HackBio
 
-2. mkdir sakshi 
+mkdir sakshi 
 
-3. mkdir biocomputing && cd biocomputing
+mkdir biocomputing && cd biocomputing
 
-4. wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk 
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk 
 
-5. mv wildtype.fna ../sakshi/
+mv wildtype.fna ../sakshi/
 
-6. rm wildtype.gbk.1
+rm wildtype.gbk.1
 
-7. cd ../sakshi/
+cd ../sakshi/
 
-8. nano analyse.sh #script to check whether our file is mutant or wildtype
+nano analyse.sh      
    
    $ #!/bin/bash
    
@@ -25,27 +25,25 @@
          echo "The file is a wild type"
      fi
      
-9. chmod +x analyse.sh
+chmod +x analyse.sh
 
-10. ./analyse.sh 
+./analyse.sh 
 
-11. grep "tatatata" "wildtype.fna" > "mutant_lines.txt"
+grep "tatatata" "wildtype.fna" > "mutant_lines.txt"
 
-12. echo tp53
+esearch -db nucleotide -query "MH011443.1" | efetch -format fasta > tp53.fasta
 
-13. esearch -db nucleotide -query "MH011443.1" | efetch -format fasta > tp53.fasta
+grep -v '^>' tp53.fasta | wc -l
 
-14. grep -v '^>' tp53.fasta | wc -l
+A=$(grep -v '^>' tp53.fasta | grep -o 'A' | wc -l)
 
-15. A=$(grep -v '^>' tp53.fasta | grep -o 'A' | wc -l)
+G=$(grep -v '^>' tp53.fasta | grep -o 'G' | wc -l)
 
-16. G=$(grep -v '^>' tp53.fasta | grep -o 'G' | wc -l)
+C=$(grep -v '^>' tp53.fasta | grep -o 'C' | wc -l)
 
-17. C=$(grep -v '^>' tp53.fasta | grep -o 'C' | wc -l)
+T=$(grep -v '^>' tp53.fasta | grep -o 'T' | wc -l)
 
-18. T=$(grep -v '^>' tp53.fasta | grep -o 'T' | wc -l)
-
-19. nano GCcontent.sh #script to calculate %GC content in our gene 
+nano GCcontent.sh        
    
     $ #!/bin/bash
 
@@ -63,16 +61,16 @@
     # Print the result
     echo "GC content percentage: $gc_percentage%"
     
-20. chmod +x GCcontent.sh
+chmod +x GCcontent.sh
 
-21. ./GCcontent.sh
+./GCcontent.sh
 
-22. touch sakshi.fna
+touch sakshi.fna
 
-23. echo “A: $A, T: $T, C: $C, G: $G” >> sakshi.fna
+echo “A: $A, T: $T, C: $C, G: $G” >> sakshi.fna
 
-24. ls
+ls
 
-25. clear
+clear
 
-26. history 
+history 
