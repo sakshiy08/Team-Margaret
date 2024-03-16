@@ -18,28 +18,28 @@ We are a team of 8 contributors working together to delve into the world of geno
 - -
 - Sakshi Yadu
 [LinkedIn](https://www.linkedin.com/in/sakshi-yadu-sy08/)
-  [Email](mailto:sakshiydv08@gmai.com)
-- -Education: Master's in Computational and Integrative Sciences from JNU, New Delhi, India
+[Email](mailto:sakshiydv08@gmai.com)
+- - Education: Master's in Computational and Integrative Sciences from JNU, New Delhi, India
 - - Research Interests: Multi-omics analysis and integration, machine learning, precision medicine in cancer research, pipeline development for NGS
 - Nour Marwan
 [LinkedIn](https://www.linkedin.com/in/nour-mmm/)
-  [Email](mailto:nourmarwanmm@gmail.com)
+[Email](mailto:nourmarwanmm@gmail.com)
 - - Education: BSc. in Biotechnology, MSA University (Cairo, Egypt)
 - - Research Interests: AI for Biotechnology, Synthetic Biology, Bioinformatics, Regenerative Medicine, Medical Nanotechnology, Environmental Nanotechnology, Animal Conservation
 - Ruth Agbeyeke
 [LinkedIn]()
-  [Email]()
+[Email]()
 - -
 - -
 - Hossam Hatem
 [LinkedIn](https://www.linkedin.com/in/hossamhatem/)
-  [Email](mailto:hossamhatem59@gmail.com)
+[Email](mailto:hossamhatem59@gmail.com)
 - - Education: BSc. in Biotechnology / Biomolecular Chemistry, Faculty of Science, Cairo University (Giza, Egypt)
 - - Research Interests: Molecular biology, Immunology, Synthetic biology, Bioinformatics, Precision medicine
     
 - SOUPAYAN BANERJEE
 [LinkedIn]()
-  [Email]()
+[Email]()
 - -
 - -
 - Giwa Tolulope Deborah
