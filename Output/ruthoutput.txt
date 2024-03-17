@@ -1,1 +1,5 @@
 Total %GC in my favorite gene - ND5 Wuchereria bancrofti iS 26%
+Total number of ADENINE = 234
+Total number of GUANINE = 310
+Total number of CYTOSINE = 108
+Total number of THYAMINE = 947
