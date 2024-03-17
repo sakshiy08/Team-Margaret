@@ -38,7 +38,7 @@ We are a team of 8 contributors working together to delve into the world of geno
   - Education: BSc. in Biotechnology / Biomolecular Chemistry, Faculty of Science, Cairo University (Giza, Egypt)
   - Research Interests: Molecular biology, Immunology, Synthetic biology, Bioinformatics, Precision medicine
 
-- Giwa Tolulope Deborah
+- Tolulope Deborah Giwa
   [LinkedIn](www.linkedin.com/in/tolulopegiwa)
   [Email](mailto:giwatolulope.gtd@gmail.com)
   -
