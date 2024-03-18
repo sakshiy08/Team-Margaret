@@ -9,7 +9,7 @@ This repository serves as a collaborative platform for participants of the Genom
 We are a team of 8 contributors working together to delve into the world of genomics and programming. 
 - Mosopefoluwa Alabi (Team Leader)
   [LinkedIn](https://www.linkedin.com/in/mosopefoluwa-alabi/)
-  [Email]()
+  [Email](mailto:mosopealabi@gmail.com)
   -
   -
 - Rana Sabry Ismaeil (Assistant)
@@ -45,6 +45,12 @@ We are a team of 8 contributors working together to delve into the world of geno
   - Education: Bachelor's in Aquaculture and Fisheries, Certificate in Fish Health, Postgraduate study aspirant.
   - Research Interests: Fish disease and Health management, Aquaculture genomics and bioinformatics
 
+- Soupayan Banerjee
+  [LinkedIn](https://www.linkedin.com/in/soupayan-banerjee-1b79291ba/)
+  [Email](mailto:banerjeesoupayan7@gmail.com)
+  -
+  - Education: MSc. Forensic Genetics from WBNUJS, Kolkata, India.
+  - Research Interests: Disease genetics, Immunology, molecular biology, NGS data pipeline.
 
   # Resources
 
