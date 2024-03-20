@@ -11,8 +11,8 @@ We are a team of 8 contributors working together to delve into the world of geno
   [LinkedIn](https://www.linkedin.com/in/mosopefoluwa-alabi/)
   [Email](mailto:mosopealabi@gmail.com)
   -
-  - Education:
-  - Research Interests:
+  - Education: Bachelor's in Pharmacy, Obafemi Awolowo University, Ile-Ife, Nigeria
+  - Research Interests: Cancer Genomics, Precision/Genetic Medicine, Bioinformatics
 - Rana Sabry Ismaeil (Assistant)
   [LinkedIn](https://www.linkedin.com/in/rana-sabry/)
   [Email](mailto:ranaasabrii2@gmail.com)
