@@ -11,7 +11,8 @@ We are a team of 8 contributors working together to delve into the world of geno
   [LinkedIn](https://www.linkedin.com/in/mosopefoluwa-alabi/)
   [Email](mailto:mosopealabi@gmail.com)
   -
-  -
+  - Education:
+  - Research Interests:
 - Rana Sabry Ismaeil (Assistant)
   [LinkedIn](https://www.linkedin.com/in/rana-sabry/)
   [Email](mailto:ranaasabrii2@gmail.com)
@@ -52,6 +53,12 @@ We are a team of 8 contributors working together to delve into the world of geno
   - Education: MSc. Forensic Genetics from WBNUJS, Kolkata, India.
   - Research Interests: Disease genetics, Immunology, molecular biology, NGS data pipeline.
 
+- Ruth Agbeyeke
+  [LinkedIn](www.linkedin.com/in/ruth-agbeyeke)
+  [Email](mailto:agbeyekeruthie@gmail.com)
+  -
+  - Education: Bsc in Medical Biochemistry and MSc in Informarion Technology.
+  - Research Interests: .
   # Resources
 
   - [Bash Scripting](https://linuxhandbook.com/bash/)
