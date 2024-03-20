@@ -9,7 +9,7 @@ This repository serves as a collaborative platform for participants of the Genom
 We are a team of 8 contributors working together to delve into the world of genomics and programming. 
 - Mosopefoluwa Alabi (Team Leader)
   [LinkedIn](https://www.linkedin.com/in/mosopefoluwa-alabi/)
-  [Email](mailto:mosopealabi@gmail.com)
+  [Email](mailto:alabimosope@yahoo.com)
   -
   - Education: Bachelor's in Pharmacy, Obafemi Awolowo University, Ile-Ife, Nigeria
   - Research Interests: Cancer Genomics, Precision/Genetic Medicine, Bioinformatics
