@@ -1,6 +1,6 @@
 wget # for downloading dataset
-fastqc # for Quality Control Check
-fastp  # for Trimming
-bwa  # for Genome Mapping
-samtools # for converting SAM files to BAM files
-bcftools  # OR Freebayes for Variant Calling
+fastqc version == 0.12.1 # for Quality Control Check
+fastp version == 0.23.4  # for Trimming
+bwa Version: 0.7.17-r1188 # for Genome Mapping
+samtools Version: 1.19.2 (using htslib 1.19.1) # for converting SAM files to BAM files
+bcftools Version: 1.19 (using htslib 1.19.1) # OR Freebayes for Variant Calling
