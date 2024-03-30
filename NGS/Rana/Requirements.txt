@@ -1,0 +1,6 @@
+wget # for downloading dataset
+fastqc # for Quality Control Check
+fastp  # for Trimming
+bwa  # for Genome Mapping
+samtools # for converting SAM files to BAM files
+bcftools  # OR Freebayes for Variant Calling
