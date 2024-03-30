@@ -9,9 +9,10 @@ This repository serves as a collaborative platform for participants of the Genom
 We are a team of 8 contributors working together to delve into the world of genomics and programming. 
 - Mosopefoluwa Alabi (Team Leader)
   [LinkedIn](https://www.linkedin.com/in/mosopefoluwa-alabi/)
-  [Email]()
+  [Email](mailto:alabimosope@yahoo.com)
   -
-  -
+  - Education: Bachelor's in Pharmacy, Obafemi Awolowo University, Ile-Ife, Nigeria
+  - Research Interests: Cancer Genomics, Precision/Genetic Medicine, Bioinformatics
 - Rana Sabry Ismaeil (Assistant)
   [LinkedIn](https://www.linkedin.com/in/rana-sabry/)
   [Email](mailto:ranaasabrii2@gmail.com)
@@ -38,14 +39,26 @@ We are a team of 8 contributors working together to delve into the world of geno
   - Education: BSc. in Biotechnology / Biomolecular Chemistry, Faculty of Science, Cairo University (Giza, Egypt)
   - Research Interests: Molecular biology, Immunology, Synthetic biology, Bioinformatics, Precision medicine
 
-- Giwa Tolulope Deborah
+- Tolulope Deborah Giwa
   [LinkedIn](www.linkedin.com/in/tolulopegiwa)
   [Email](mailto:giwatolulope.gtd@gmail.com)
   -
   - Education: Bachelor's in Aquaculture and Fisheries, Certificate in Fish Health, Postgraduate study aspirant.
   - Research Interests: Fish disease and Health management, Aquaculture genomics and bioinformatics
 
+- Soupayan Banerjee
+  [LinkedIn](https://www.linkedin.com/in/soupayan-banerjee-1b79291ba/)
+  [Email](mailto:banerjeesoupayan7@gmail.com)
+  -
+  - Education: MSc. Forensic Genetics from WBNUJS, Kolkata, India.
+  - Research Interests: Disease genetics, Immunology, molecular biology, NGS data pipeline.
 
+- Ruth Agbeyeke
+  [LinkedIn](www.linkedin.com/in/ruth-agbeyeke)
+  [Email](mailto:agbeyekeruthie@gmail.com)
+  -
+  - Education: Bsc in Medical Biochemistry and MSc in Informarion Technology.
+  - Research Interests: .
   # Resources
 
   - [Bash Scripting](https://linuxhandbook.com/bash/)
