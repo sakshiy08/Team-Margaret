@@ -10,7 +10,7 @@ conda install -c bioconda fastp
 conda install -c bioconda fastqc
 
 #install bcftools
-conda install -c bioconda fastqc
+conda install -c bioconda bcftools
 
 #install samtools in bioenv
 conda create --name bioenv && conda activate bioenv && conda install -c bioconda samtools
