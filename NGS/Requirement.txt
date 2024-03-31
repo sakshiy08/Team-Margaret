@@ -1,0 +1,6 @@
+wget #for downloading dataset
+trimmomatic version #for quality control
+fastp version = 0.23.1 #for trimming
+bwa #for genome mapping
+samtools version : 1.13 #for converting SAM files to BAM files
+freebayes version : v1.3.2-dirty #for variant calling
