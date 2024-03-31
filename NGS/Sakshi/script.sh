@@ -21,13 +21,13 @@ ls
 google-chrome fastp.html
 
 ##Genome Mapping (bwa) 
- 
+
 bwa index Reference.fasta 
 bwa mem -M reference.fasta trimmed_forward.fastq trimmed_reverse.fastq > mapped_reads.sam
 samtools view -S -b mapped_reads.sam > mapped_reads.bam 
 samtools sort mapped_reads.bam -o sorted_mapped_reads.bam 
 
-
-
 ##Variant Calling (bcftools)
 
+bcftools mpileup -Ou -f reference.fasta sorted_mapped_reads.bam | bcftools call -Ov -mv -o variants.vcf
+bcftools view variants.vcf
