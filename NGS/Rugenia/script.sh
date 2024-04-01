@@ -32,7 +32,8 @@ samtools view -S -b ERR8774458.sam > ERR8774458.bam
 
 #step 5: Variant Calling with bcftools
 #first sort the bam file with command 
-samtools sort -o allignment/ERR8774458_sorted.bam allignment/ERR8774458.bam
+samtools sort -o allignment/ERR8774458_sorted.bam allignment/ERR8774458.bam or 
+samtools sort allignment/ERR8774458.bam -o allignment/ERR8774458_sorted.bam 
 
 #then run the command below
 bcftools mpileup -O b -o variant/bcf/ERR8774458.bcf -f reference_genome/Reference.fasta allignment/ERR8774458_sorted.bam
