@@ -1,0 +1,22 @@
+#Requirements to run NGS pipeline using BASh scrip
+
+Wget: A tool for downloading data from html links.
+wget version: 1.21.2
+
+# FastQC: A quality control tool for high throughput sequence data.
+fastqc version: 0.11.9
+
+# FastP: A tool designed to provide fast all-in-one preprocessing for FastQ files.
+fastp version: 0.20.1
+
+MultiQC: A quality control tool for high throughput sequence data (merge all FastQC reports in one report).
+fastqc version: 0.11.9
+
+# BWA: A software package for mapping low-divergent sequences against a large reference genome.
+bwa version: 0.7.17-r1188
+
+# Samtools: A set of tools for interacting with high-throughput sequencing data.
+samtools version: 1.13
+
+# Bcftools: A set of tools for variant calling and manipulating VCFs and BCFs.
+bcftools version: 1.13
