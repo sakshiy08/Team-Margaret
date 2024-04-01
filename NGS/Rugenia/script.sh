@@ -36,7 +36,7 @@ samtools sort -o allignment/ERR8774458_sorted.bam allignment/ERR8774458.bam or
 samtools sort allignment/ERR8774458.bam -o allignment/ERR8774458_sorted.bam 
 
 #then run the command below
-bcftools mpileup -O b -o variant/bcf/ERR8774458.bcf -f reference_genome/Reference.fasta allignment/ERR8774458_sorted.bam
+bcftools mpileup -O b -o variant/bcf/ERR8774458.vcf -f reference_genome/Reference.fasta allignment/ERR8774458_sorted.bam
 
 done
 
