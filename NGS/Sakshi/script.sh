@@ -21,22 +21,27 @@ mkdir -p qcoutput && fastqc *.fastq.gz -o qcoutput/
 
 ##Trimming (FastP) 
 
-nano trim.sh 
-#!/bin/bash
 for file in *R1.fastq.gz; do
-    fastp -i $file -I ${file/R1/R2} -o trimmed_$(basename $file .gz) -O trimmed_$(basename ${file/R1/R2} .gz)
+    fastp -i $file -I ${file/R1/R2} -o trimmed_$(basename $file) -O trimmed_$(basename ${file/R1/R2})
 done
-chmod +x trim.sh
-./trim.sh 
 
 ##Genome Mapping (bwa) 
 
 bwa index reference.fasta 
-bwa mem -M reference.fasta trimmed_forward.fastq trimmed_reverse.fastq > mapped_reads.sam
-samtools view -S -b mapped_reads.sam > mapped_reads.bam 
-samtools sort mapped_reads.bam -o sorted_mapped_reads.bam 
+
+for file in trimmed_*; do
+    bwa mem -M reference.fasta ${file} ${file/R1/R2} > $(basename ${file/.fastq.gz/.sam})
+done
+
+##Conversion of SAM to BAM and sorting (SAMtools)
+
+for file in *.sam; do
+    samtools view -S -b $file | samtools sort -o $(basename ${file/.sam/.sorted.bam})
+done
+
 
 ##Variant Calling (bcftools)
 
-bcftools mpileup -Ou -f reference.fasta sorted_mapped_reads.bam | bcftools call -Ov -mv -o variants.vcf
-bcftools view variants.vcf
+for file in *.sorted.bam; do
+    bcftools mpileup -Ou -f reference.fasta $file | bcftools call -Ov -mv -o $(basename ${file/.sorted.bam/.vcf})
+done
