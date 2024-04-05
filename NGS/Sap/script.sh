@@ -3,6 +3,20 @@
 wget https://zenodo.org/records/10426436/files/ERR8774458_1.fastq.gz?download=1
 wget https://zenodo.org/records/10426436/files/ERR8774458_2.fastq.gz?download=1
 wget https://zenodo.org/records/10886725/files/Reference.fasta?download=1
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/ACBarrie_R1.fastq.gz
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/ACBarrie_R2.fastq.gz
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Alsen_R1.fastq.gz
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Alsen_R2.fastq.gz 
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Baxter_R1.fastq.gz 
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Baxter_R2.fastq.gz 
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Chara_R1.fastq.gz 
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Chara_R2.fastq.gz 
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Drysdale_R1.fastq.gz 
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Drysdale_R2.fastq.gz 
+
+##reference genome
+wget https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_reads/reference.fasta  
+
 
 mv  ERR8774458_1.fastq.gz?download=1 ERR8774458.fastq.gz
 mv ERR8774458_2.fastq.gz?download=1 ERR8774458_2.fastq.gz
@@ -10,27 +24,33 @@ mv ERR8774458.fastq.gz ERR8774458_1.fastq.gz
 
 #Quality Control
 
-fastqc ERR8774458_1.fastq.gz ERR8774458_2.fastq.gz
+mkdir -p qcoutput && fastqc *.fastq.gz -o qcoutput/
 
 #Trimming
 
-trimmomatic PE -phred33 ERR8774458_1.fastq.gz ERR8774458_2.fastq.gz     ERR8774458_1.trimmed.fastq.gz ERR8774458_1.unpaired.fastq.gz     ERR8774458_2.trimmed.fastq.gz ERR8774458_2.unpaired.fastq.gz     ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+for file in *fastq.gz; do
+    fastp -i $file -I ${file/R1/R2} -o trimmed_$(basename $file) -O trimmed_$(basename ${file/R1/R2})
+done
+
 #Genome Mapping
 
-bwa
-bwa index Reference.fasta?download=1
-bwa mem Reference.fasta?download=1 ERR8774458_1.trimmed.fastq.gz ERR8774458_2.trimmed.fastq.gz > aligned_reads.sam
+bwa index reference.fasta 
+for file in trimmed_*; do     
+bwa mem -M reference.fasta ${file} ${file/R1/R2} > $(basename ${file/.fastq.gz/.sam}); 
+done
 
-conda env list
+#Activate Samtools 
 conda activate samtools_env
 
 #SAM file to a sorted and indexed BAM file
 
-samtools view -b -o aligned_reads.bam aligned_reads.sam
-samtools sort -o aligned_reads.sorted.bam aligned_reads.bam
-samtools index aligned_reads.sorted.bam
+for file in *.sam; do
+samtools view -S -b $file | samtools sort -o $(basename ${file/.sam/.sorted.bam})
+done
 
 #Variant Calling(freebayes tool)
 
-conda install -c bioconda freebayes
-freebayes -f Reference.fasta?download=1 aligned_reads.sorted.bam > variants.vcf
+for file in *.sorted.bam; do
+    bcftools mpileup -Ou -f reference.fasta $file | bcftools call -Ov -mv -o $(basename ${file/.sorted.bam/.vcf})
+done
+
