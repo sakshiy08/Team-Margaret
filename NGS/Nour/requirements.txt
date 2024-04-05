@@ -1,0 +1,5 @@
+- bwa [version: 0.7.17-r1188]
+- fastp [version: 0.20.1]
+- fastqc [version: v0.11.9]
+- bcftools [version: 1.11]
+- samtools [version: 1.11]

@@ -1,6 +1,0 @@
-FastQC == v0.12.1
-fastp == 0.23.2
-samtools == 1.6
-bcftools == 1.11
-bwa
-openblas
