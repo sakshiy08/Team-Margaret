@@ -1,0 +1,9 @@
+------- Tools used to complete the NGS_Analysis Pipeline --------
+
+1. FASTQC version FastQC v0.11.9
+2. FASTP version  0.20.1
+3. BBTOOLS version 37.62-0  
+3. BWA Version: 0.7.17
+4. SAMTOOLS version: 1.13
+5. BCFTOOLS version: 1.13
+
