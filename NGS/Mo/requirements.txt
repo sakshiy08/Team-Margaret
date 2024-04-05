@@ -1,0 +1,8 @@
+The tools needed to run a simple ngs pipeline
+
+1. Fastqc — this is needed to carry out quality control test
+2. Fastp — this is needed to trim adapters and filter low reads
+3. Bwa — this is needed to map the forward abd reverse strands to the reference genome. The result is a .sam file
+4. Samtools — this is needed to convert the .sam file to .bam file
+5. Bcftools — this is needed to call the variants
+
