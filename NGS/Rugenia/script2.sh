@@ -52,23 +52,40 @@ files=(
   "Drysdale"
 )
 for file in "${files[@]}"; do
-    	fastp -i "${file}_R1.fastq" -I "${file}_R2.fastq" -o "trimmed/${file}_R1_trimmed.fastq" -O "trimmed/${file}_R2_trimmed.fastq"
-	repair.sh -Xmx14g "in1=${file}_R1.fastq" "in2=${file}_R2.fastq" "out1=${file}_R1_repaired.fastq" "out2=${file}_R2_repaired.fastq"
-	
-	#step 4: Genome mapping using BWA
+    	fastp -i "datasets/${file}_R1.fastq" -I "datasets/${file}_R2.fastq" -o "trimmed/${file}_R1_trimmed.fastq" -O "trimmed/${file}_R2_trimmed.fastq"
+	repair.sh -Xmx14g "in1=datasets/${file}_R1.fastq" "in2=datasets/${file}_R2.fastq" "out1=repaired/${file}_R1_repaired.fastq" "out2=repaired/${file}_R2_repaired.fastq"
+
+  	#fastqc repaired reads
+   	fastqc repaired/*repaired.fastq
+  	#trim repaired reads as well
+	fastp -i "repaired/${file}_R1_repaired.fastq" -I "repaired/${file}_R2_repaired.fastq" -o "trimmed/${file}_R1_repaired_trimmed.fastq" -O "trimmed/${file}_R2_repaired_trimmed.fastq"
+	#fastqc trimmed repaired reads
+ 	fastqc trimmed/*repaired_trimmed.fastq -o output_qc
+ 	#step 4: Genome mapping using BWA
 	#--First create an index file for the reference genome with command below
- 	bwa index reference_genome/Reference.fasta
+ 	bwa index reference_genome/reference.fasta
 	
-	#create allignment
-	bwa mem reference_genome/Reference.fasta "datasets/${file}_R1.fastq" "datasets/${file}_R2.fastq" > "allignment/${file}.sam"
+	#create allignment (for here I did for both repaired and normal reads to be sure)
+	bwa mem reference_genome/reference.fasta "datasets/${file}_R1.fastq" "datasets/${file}_R2.fastq" > "allignment/${file}.sam"
+
+  	#allignment for repaired reads
+   	bwa mem reference_genome/reference.fasta "repaired/${file}_R1_repaired.fastq" "repaired/${file}_R2_repaired.fastq" > "allignment/${file}_repaired.sam" 
+
 	
 	#convert sam file to bam file 
-	samtools view -S -b "${file}.sam" > "${file}.bam"
-	#sort bam files
-	samtools sort "${file}.bam" -o "${file}_sorted.bam"   
+	samtools view -S -b "allignment/${file}.sam" > "allignment${file}.bam"
+ 	samtools view -S -b "allignment/${file}_repaired.sam" > "allignment/${file}_repaired.bam"
+
+   	#moving files
+    	mv allignment/*repaired.bam repaired_bams
+	
+ 	#sort bam files
+	samtools sort "allignment/${file}.bam" -o "allignment/${file}_sorted.bam"   
+ 	samtools sort "repaired_bams/${file}_repaired.bam" -o "repaired_bams/${file}_repaired_sorted.bam"
 	
 	#step 5: Variant Calling
 	bcftools mpileup -O b -o "variant/${file}.vcf" -f reference_genome/reference.fasta "allignment/${file}_sorted.bam" 
+ 	bcftools mpileup -O b -o "variant/${file}_repaired.vcf" -f reference_genome/reference.fasta "repaired_bams/${file}_repaired_sorted.bam" 
 done
 
 
