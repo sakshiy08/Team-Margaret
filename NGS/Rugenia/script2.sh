@@ -42,7 +42,7 @@ fastqc datasets/Chara_R2.fastq -o output_qc
 fastqc datasets/Drysdale_R1.fastq -o output_qc 
 fastqc datasets/Drysdale_R2.fastq -o output_qc 
 
-# step3 trimming with fastp and repairing
+# step3 trimming with fastp and repairing (made other directories manually)
 mkdir trimmed
 files=(
   "ACBarrie"
