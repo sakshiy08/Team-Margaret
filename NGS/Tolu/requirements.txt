@@ -1,6 +1,0 @@
-wget = to download dataset
-fastqc version = v0.12.1
-fastp version = 0.23.2
-bwa version = 0.7.17-v1188
-samtools version = 1.17, using htslib 1.17
-bcftools version = 1.6, using htslib 1.6
