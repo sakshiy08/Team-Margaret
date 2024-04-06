@@ -16,6 +16,8 @@ wget https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_reads
 
 # Download datasets
 echo 'Downloading datasets...'
+wget https://zenodo.org/records/10426436/files/ERR8774458_1.fastq.gz -P download/
+wget https://zenodo.org/records/10426436/files/ERR8774458_2.fastq.gz -P download/
 wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/ACBarrie_R1.fastq.gz -P download/
 wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/ACBarrie_R2.fastq.gz -P download/
 wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Alsen_R1.fastq.gz -P download/
@@ -33,8 +35,8 @@ fastqc download/*.fastq.gz -o qc1/
 
 # Trimming using FastP
 echo "Running fastp for trimming..."
-for file in download/*_R1.fastq.gz; do
-    fastp -i "$file" -I "${file/R1/R2}" -o "trim/trimmed_$(basename "$file")" -O "trim/trimmed_$(basename "${file/R1/R2}")"
+for file in download/*1.fastq.gz; do
+    fastp -i "$file" -I "${file/1/2}" -o "trim/trimmed_$(basename "$file")" -O "trim/trimmed_$(basename "${file/1/2}")"
 done
 
 # Quality control again after trimming using FastQC
@@ -47,7 +49,7 @@ bwa index download/reference.fasta
 
 echo "Performing genome mapping using BWA mem..."
 for file in trim/*.fastq.gz; do
-    bwa mem download/reference.fasta "${file}" "${file/R1/R2}" > "mapping/$(basename "${file/.fastq.gz/.sam}")"
+    bwa mem download/reference.fasta "${file}" "${file/1/2}" > "mapping/$(basename "${file/.fastq.gz/.sam}")"
 done
 
 # Convert SAM to BAM and sort using SAMtools
